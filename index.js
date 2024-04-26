@@ -1,49 +1,52 @@
 function App(){
   const [todos, setTodos] = React.useState([
     {
-      text: ' Learn react',
+      text: ' Learn React ',
       isCompleted: false,
     },
     {
-      text: ' Meet friend for lunch today',
+      text: ' Meet a friend for lunch',
       isCompleted: false,
     },
     {
-      text: ' Build todo app',
+      text: ' Build Todo App',
       isCompleted: false,
-    }        
+    },
+    {
+      text: ' One',
+      isCompleted: false,
+    },
+    {
+      text: ' Two',
+      isCompleted: false,
+    },
+    {
+      text: ' Three',
+      isCompleted: false,
+    },         
   ])
 
-  //function TodoForm({addTodo}){
-    const [value,setValue] = React.useState('');
-    
-    const handleSubmit = e => {
-      e.preventDefault();
-      if(!value) return;
-      const newTodos = [...todos, {text:value, isCompleted:false}];
-      setTodos(newTodos);
-      //addTodo(value);
-      setValue('');
-    }
+ const addTodo = text => {
+  const newTodos = [...todos, {text:text, isCompleted:false}];
+  setTodos(newTodos);
+ }
 
-    const removeTodo = e => {
-      const index = Number(e.target.id);
+    const removeTodo = index => {
+      //const index = Number(e.target.id);
       let temp = [...todos];
       temp.splice(index,1);
       setTodos(temp);
     }
   
     return (<>
-    {todos.map((todo,i) => <div classname = "todo"
-      key = {i} id = {i} onClick = {removeTodo} > {todo.text}</div>)}
-      <form onSubmit={handleSubmit}>
-        <input 
-          type="text"
-          className="input"
-          value={value}
-          placeholder="Add Todo..."
-          onChange={e => setValue(e.target.value)} />
-      </form>
+    <div className = "app">
+      <div className = "todo-list">
+    
+    {todos.map((todo,i) => 
+      <Todo index= {i} key = {i} todo = {todo} remove = {removeTodo}/>)}
+      <TodoForm addTodo = {addTodo}/>
+      </div>
+    </div>
    </> );
   }
 
