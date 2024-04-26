@@ -1,21 +1,25 @@
 body {
+    text-align: center;
     margin: 0.5;
     font-family: 'Arial';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
+}
   
   code {
     font-family: sans-serif;
   }
   
   .app {
-    background: #209cee;
-    padding: 30px;
+    text-align: center;
+    background: #4b57c2;
+    padding: 130px;
     height: 100vh;
+    padding-top: 20px;
   }
   
   .todo-list{
+    text-align: center;
     background: ghostwhite;
     border-radius: 4px;
     padding: 5px;
@@ -23,6 +27,7 @@ body {
   }
   
   .todo{
+    text-align: center;
     background: #fff;
     box-shadow: 1px 1px 1px rgba(0,0,0, 0.15);
     padding: 3px 10px;
@@ -35,6 +40,7 @@ body {
   }
   
   .input{
+    text-align: center;
     width: 100%;
     box-sizing: border-box;
     border: 0;
